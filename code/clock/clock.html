@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+    <style type="text/css">
+    .container{
+        width: 400px;
+        height: 200px;
+        margin: 0 auto;
+        padding: 80px 0 0 30px;
+        
+    }
+    .time{ position: relative;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="time" src="img/0.png">
+        <img class="time" src="img/0.png">
+        <img src="img/second1.png">
+        <img class="time" src="img/0.png">
+        <img class="time" src="img/0.png">
+        <img src="img/second1.png">
+        <img class="time" src="img/0.png">
+        <img class="time" src="img/0.png">
+    </div>
+    <script type="text/javascript">
+
+
+        function change(h,m,s){
+            var h = new Date().getHours();
+            var m = new Date().getMinutes();
+            var s = new Date().getSeconds();
+
+            if(h<10){
+                h = "0" +h;
+            }
+
+            if(m<10){
+                m = "0" +m;
+            }
+            if(s<10){
+                s = "0"+ s;
+            }
+
+            var str = h+""+m+""+s;
+            var arr = str.split("");
+            var time = document.getElementsByClassName("time");
+
+            for(var i=0; i<time.length; i++){
+
+                time[i].src = "img/" + arr[i]+ ".png";
+
+                if(arr[5] <= 9){
+                    shake(time[5]);
+                }
+                if(arr[5] == 0){
+                    shake(time[4]);
+                } 
+                if(arr[4] == 0 && arr[5] == 0){
+                    shake(time[3]);
+                }
+                if(arr[3] == 0 && arr[4] == 0 && arr[5] == 0){
+                    shake(time[2]);
+                }
+                if(arr[2] == 0 && arr[3] == 0 && arr[4] == 0 && arr[5] == 0){
+                    shake(time[1]);
+                }
+                // if(arr[1] == 9){
+                //     shake(time[0]);
+                // }
+                
+            }
+
+
+        }
+        change();
+        setInterval(change, 1000);
+
+
+    function shake(img){
+        
+        setTimeout(function(){
+
+            img.style.top =  "30px ";
+
+            setTimeout(function(){
+
+                img.style.top =  "-30px ";
+
+                setTimeout(function(){
+                    img.style.top =  "0px ";
+                }, 30);
+
+            }, 30);     
+        }, 30);
+
+    }
+
+    </script>
+</body>
+</html>
