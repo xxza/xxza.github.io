@@ -1,0 +1,118 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+	#div1{width: 20px;height: 20px;position: absolute;background-color: red;
+		cursor: pointer;}
+	#div2{width: 400px;height: 20px;position: relative;background: green;margin:50 auto; }
+	#div3{position:relative;width:200px;height:300px;background-color: yellow;border:1px red solid;overflow: hidden;}
+	#div4{position: absolute;}
+	</style>
+	<script type="text/javascript">
+
+	function myaddEvent(obj,sEvent,fn)
+	{
+		if(obj.attachEvent)
+		{
+			obj.attatchEvent("on"+sEvent,fn);
+		}
+		else
+		{
+			obj.addEventListener(sEvent,fn,false);
+		}
+	}
+	
+
+	window.onload=function()
+	{
+		var odiv=document.getElementById("div1");
+		var div2=document.getElementById("div2");
+		var div3=document.getElementById("div3");
+		var div4=document.getElementById("div4");
+
+		function onMouseWheel(ev)
+		{
+			var oEvent=ev||event;
+			var bDown=true;
+
+			bDown=oEvent.wheelDelta?oEvent.wheelDelta<0:oEvent.detail>0;
+			
+			if(bDown)
+			{
+				setLeft(odiv.offsetLeft+10);
+			}
+			else
+			{
+				setLeft(div1.offsetLeft-10);
+			}
+			return false;
+		}
+		myaddEvent(div2,"mousewheel",onMouseWheel);
+		myaddEvent(div2,"DOMMouseScroll",onMouseWheel);
+		myaddEvent(div3,"mousewheel",onMouseWheel);
+		myaddEvent(div3,"DOMMouseScroll",onMouseWheel);
+		odiv.onmousedown=function(ev)
+		{
+			var oEvent=ev||event;
+			var disX=oEvent.clientX-odiv.offsetLeft;
+			
+
+			document.onmousemove=function(ev)
+			{
+
+				var oEvent=ev||event;
+				var l=oEvent.clientX-disX;
+				setLeft(l);
+			}
+
+			document.onmouseup=function()
+			{
+				document.onmousemove=null;
+				document.onmouseup=null;
+				
+			}
+			
+			
+		}
+	
+	function setLeft(l)
+	{
+		if(l<0)
+		{
+			l=0;
+		}
+		else if(l>div2.offsetWidth-odiv.offsetWidth)
+		{
+			l=div2.offsetWidth-odiv.offsetWidth;
+		}
+		odiv.style.left=l+"px";
+		var aa=l/(div2.offsetWidth-odiv.offsetWidth);
+		document.title=aa;
+
+		div4.style.top=-(div4.offsetHeight-div3.offsetHeight)*aa+"px";
+
+				
+	}
+}
+	</script>
+</head>
+
+<body>
+	<div id="div2">
+		<div id="div1"></div>
+	</div>
+	<div id="div3">
+		<div id="div4">
+			百度 ，中文搜索引擎，2000年1月创立于北京中关村。百度的使命是让人们最便捷地获取信息，找到所求。其核心价值观是“简单可依赖”。
+
+1999年底，身在美国硅谷的李彦宏看到了中国互引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，与徐勇一同回国，于2000年1月1日在中关村创建了百度中国公司。注册地在英国的开曼群岛。2013年6月13日消息，阿里巴巴集团已经把集团下各个平台的客服电话接入百度搜索，并且阿里集团还将支付宝智能客服系统接入百度应用。
+
+百度上市 折叠
+
+2005年8月5日，百度在美国纳斯达克上市（股票代码：BIDU），其上市当日，即成为该年度全球资本市场上最为耀眼的新星，通过数年来的市场表现，其优异的业绩与值得依赖的回报，使之成为中国企业价值的代表，傲然屹立于全球资本市场。2011年3月24日百度(Nasdaq:BIDU)市值收盘报460.72亿美元，超过腾讯(00700 .HK)23日收盘时的约445亿美元。五年来，中国互联网企业市值第一的头衔首次易主
+
+		</div>
+
+	</div>
+</body>
+</html>

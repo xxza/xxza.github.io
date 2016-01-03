@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="1000" height="1000"></canvas>
+
+<script>
+	// window.onload=function()
+	// {
+	// 	var canvas=document.getElementById("mycanvas");
+	// 	if(canvas==null)
+	// 	{
+	// 		return false;
+	// 	}
+	// 	var context=canvas.getContext("2d");
+	// 	context.fillStyle="EEEEFF";
+	// 	context.fillRect(0,0,300,300);
+	// 	context.translate(200,50);
+	// 	// context.fillStyle="rgba(255,0,0,0.25)";
+	// 	// for(var i=0;i<50;i++)
+	// 	// {
+	// 	// 	context.translate(25,25);
+	// 	// 	context.scale(0.95,0.95);
+	// 	// 	context.rotate(Math.PI/10);
+	// 	// 	context.fillRect(0,0,100,50);
+	// 	// }
+	// 	for(var i=0;i<50;i++)
+	// 	{
+	// 		context.translate(25,25);
+	// 		context.scale(0.95,0.95);
+	// 		context.rotate(Math.PI/10);
+	// 		create5Star(context);
+	// 		context.fill();
+	// 	}
+	// }
+	// function create5Star(context)
+	// {
+	// 	var n=0;
+	// 	var dx=100;
+	// 	var dy=0;
+	// 	var s=50;
+	// 	context.beginPath();
+	// 	context.fillStyle="rgba(255,0,0,0.5)";
+	// 	var x=Math.sin(0);
+	// 	var y=Math.cos(0);
+	// 	var dig=Math.PI/5*4;
+	// 	for(var i=0;i<5;i++)
+	// 	{
+	// 		var x=Math.sin(i*dig);
+	// 		var y=Math.cos(i*dig);
+	// 		context.lineTo(dx+x*s,dy+y*s);
+	// 	}
+	// 	context.closePath();
+	// }
+	// var canvas=document.getElementById("mycanvas");
+	// if(canvas==null)
+	// 	return false;
+	// var context=canvas.getContext("2d");
+	// // var oprtns=new Array(
+	// // 	"source-atop",//新图形在原图形之上绘制，只显示原图形整体
+	// // 	"source-in",//只显示新原图形重叠部分，其余部分透明
+	// // 	"source-out",//只显示新图形的非重叠部分，其余的透明
+	// // 	"source-over",//新图形在上，显示原新图形
+	// // 	"destination-atop",//显示新图形，原图形在上
+	// // 	"destination-in",//显示重叠部分的原图形，其余透明
+	// // 	"destination-out",//显示原图形的非重叠部分，其余隐藏
+	// // 	"destination-over",//原图形在上，显示原新图形
+	// // 	"lighter",//原新图形均绘制，重叠部分做加色处理
+	// // 	"copy",//只绘制新图形，原有图形未重叠的部分均透明
+	// // 	"xor"//只绘制新园图形不重叠部分，重叠部分透明
+	// // 	);
+	// // i=10;
+	// context.fillStyle="blue";
+	// context.fillRect(10,10,60,60);
+	// //context.globalCompositeOperation=oprtns[i];
+	// context.globalCompositeOperation="source-over";
+	// context.beginPath();
+	// context.fillStyle="red";
+	// context.arc(60,60,30,0,Math.PI*2,false);
+	// context.fill();
+	
+	window.onload=function()
+	{
+		var canvas=document.getElementById("mycanvas");
+		var context=canvas.getContext("2d");
+		var img = new Image();
+		img.onload = function()
+		{
+			context.drawImage(img,0,0);
+		}
+		img.src="5.jpg";
+	}
+	
+</script>
+</body>
+</html>

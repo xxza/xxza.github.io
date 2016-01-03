@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{background-color: #F5F5F5;}
+
+	.container{margin: 0 auto;width: 500px;}
+
+	h1{text-align: center;font-size: 100px;color:rgba(175, 47, 47, 0.15);margin: 20px 0 10px 0;}
+
+	.text{height: 50px;line-height: 30px;width: 500px;position: relative;padding-left: 25px;}
+
+	.checkbox{position: relative;top: -35px;left: 3px;display: none;}
+
+	.list{margin-top: -10px;margin-bottom: -10px;}
+
+	.li{list-style: none;border-bottom: 1px solid #F5F5F5;background-color: white;height: 30px; width: 530px;margin-left: -40px;padding:10px 0 0 0;}
+
+    /*.list .li:hover{content: "x";}*/
+	.check{padding-left: 25px;}
+
+	.list .dianji{color: #d9d9d9;text-decoration: line-through;}
+
+	.footer{height: 45px;width: 529px;border:1px solid #F5F5F5;background-color: white;margin-top: 10px;display: none;}
+
+    .footer span{display: inline-block;height: 45px;}
+    
+	.ff li{float:left;list-style: none;}
+
+	.ff li a{text-decoration: none;margin-right: 10px;}
+
+	.ff{display: inline-block;}
+
+    .button{display: none;}
+	</style>
+	<script src="jquery-2.1.3.js"></script>
+	<script type="text/javascript">
+$(function(){
+
+	$(".text").keydown(function(event){       //输入框里面没有内容 return
+
+        if(text==""&&event.keyCode == 13){
+            return false;
+    	}
+    
+		var text = $(this).val();
+
+		if(text!=""&&event.keyCode == 13){        //输入框里面的内容不为空 并按下回车
+
+	        $(".text").val("");
+	        $(".checkbox").css("display","block");
+	        $(".footer").css("display","block");
+
+        	var li = "<li class='li'><input class='check' type='checkbox'><span>" + text + "</span></li>";
+        	$(".list").append(li);
+
+		}
+		$(".footer strong").text($(".list .li").length);
+
+    })
+
+	$(".list").on("click",".check",function(){
+		$(this).next().toggleClass("dianji");
+		$(".footer strong").text($(".list .li span").not(".dianji").length);
+        $(".checkbox").prop("checked",$(".check")==$(".check").filter(".checked").length?true:false);
+	})
+
+	$(".active").click(function(){
+        $(".dianji").parent().hide();
+        $(".footer strong").text($(".list .li span").not(".dianji").length);
+    })
+
+    $(".all").click(function(){
+        $(".check").parent().show();
+        $(".footer strong").text($(".list .li span").not(".dianji").length);
+    })
+
+    $(".completed").click(function(){
+        $(".check").parent().hide();
+    })
+
+    $(".checkbox").click(function(){
+    	$(".button").css("display","inline-block");
+    	$(".check").prop("checked",this.checked);
+    	if($(".check").is(":checked")){
+            $(".check").next().addClass("dianji");
+        }else{
+            $(".check").next().removeClass("dianji");
+        }
+
+        $(".button").click(function(){
+            $(".list .li").remove();
+            $(".footer strong").text($(".list .li span").not(".dianji").length);
+            $(".checkbox").attr("checked",false).css("display","none");
+        })
+    })
+
+
+})	
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>todos</h1>
+		<input class="text" type="text" placeholder="What needs to be done?">
+		<input class="checkbox" type="checkbox">
+		<ul class="list">
+		</ul>
+		<div class="footer">
+			<span><strong>0</strong>&nbsp;items left</span>
+			<ul class="ff">
+				<li class="all"><a href="javascript:void(0)">All</a></li>
+				<li class="active"><a href="javascript:void(0)">Active</a></li>
+				<li class="completed"><a href="javascript:void(0)">Completed</a></li>
+				
+			</ul>
+			<input class="button" type="button" value="Clear Completed">
+		</div>
+		
+	</div>
+</body>
+</html>

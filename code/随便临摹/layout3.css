@@ -1,0 +1,133 @@
+body{
+    background-image: url(image/bg5.jpg);
+}
+.content{
+    width: 80%;
+    height: 167px;
+    background-image: url(image/banner1.jpg);
+    margin: 0 auto;
+    margin-top: 107px;
+}
+.content .photo{
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    border: 4px solid white;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-left:-65px;
+}
+.content .name{
+    padding-top: 48px;
+}
+.content .name h1{
+    font-weight: 100px;
+    text-align: center;
+    font-family: 'open sans';
+    font-size: 48px;
+    color: white;
+}
+.content .nav{
+    height: 50px;
+    background-color: black;
+    margin-top: -10px;
+}
+.content .nav .pure-menu-list{
+    display: block;
+    text-align: center;
+}
+.content .nav .pure-menu-list li a{
+    color: white;
+    line-height: 34px;
+}
+.content .nav .pure-menu-list li a:hover{
+    background-color: black;
+    text-decoration: underline;
+}
+.content .content-one{
+    background-color: white;
+    padding-top: 50px;
+    border-bottom: 1px solid black;
+}
+.content .content-one .content-one-h1{
+    text-align: center;
+    font-family: arial;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+.content .content-one hr{
+    width: 81px;
+    font-weight: bold;
+}
+.content .content-one .section{
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    margin-bottom: 50px;
+    color: #62686f;
+}
+.content .content-one .section-p{
+    color: #62686f;
+    font-family: 'open sans', helvetica, "Microsoft YaHei","微软雅黑",STXihei,"华文细黑",sans-serif !important
+}
+.content .pure-g{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.content .pure-g .pure-u-md-1-3{
+    text-align: center;
+}
+.content .pure-g .pure-u-md-1-3 p{
+    font-size: 16px;
+}
+.content-one .pure-g .logo{
+    width: 180px;
+}
+.content-one .second .pure-u-1 h4{
+    font-weight: bolder;
+}
+
+.content-one .pure-g .pure-u-sm-1-2 .photo-img{
+    width: 85%;
+}
+.content-one .photo-one{
+    margin-bottom: 2%;
+}
+
+.content-one .photo2-img{
+    width: 93%;
+}
+.content  .third .photo-one{
+    width: 70%;
+}
+.content .third .photo-one p{
+    text-align: center;
+}
+.content .content-one .footer{
+    width: 80%;
+    margin-left: 30%;
+}
+.content .content-one .footer .last{
+    height: 100px;
+}
+.content .content-one .footer .submit{
+    border-radius: 21px;
+    background-color: #FFD524;
+    margin-bottom: 30px;
+}
+.content .info{
+    box-shadow:0 0 10px 0;
+    
+}
+.footer-last{
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 150px;
+}
+.footer-last p{
+    display: block;
+    margin-top: 75px;
+    color: white;
+}
+
