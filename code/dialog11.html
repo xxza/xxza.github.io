@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>click</title>
+    <style type="text/css">
+body{background:#fff;color:#999;font:12px/1.5 hiragino sans gb,microsoft yahei,simsun;}
+body,form,ul,ol,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea{font-size:12px;font-weight:normal;}
+li{list-style:none;padding: 0; margin: 0;}
+img{border:0;vertical-align:top;}
+em{font-style:normal;}
+textarea{resize:none;}
+a{outline:none;}
+/* clear float */
+.cfix:after,.cf:after,.clear:after{content:".";display:block;visibility:hidden;height:0;clear:both;}
+.cfix,.cf,.clear{zoom:1}
+.cfixBoth{clear:both;height:1px;overflow:hidden;}
+.pic-dialog{position: fixed; top: 0; left: 0; width: 100%; height: 100%;}
+.flow-header{height: 60px;width: 100%;background-color: #4D4949;}
+.flow-container{width: 100%;background-color:  #7D7870;height:700px;padding-top: 35px;}
+.flow-header .header-logo{margin-top: 10px; margin-left: 20px;}
+.flow-center{width: 1175px; height: 525px; margin: 0 auto;}
+.center-l{float: left;width: 890px;height: 525px;background-color: #000; text-align: center;}
+.center-l .big-pic{margin-top: 32px; height: 403px; }
+.center-r{position:relative;float: left;width: 280px;height: 525px; background-color: #fff;}
+.l-down{position: relative; margin-top: 0px;}
+.l-down-l, .l-down-r{z-index: 5;background: url(images/ico.png) no-repeat; position: absolute;width: 20px; height: 68px;}
+.l-down-l{ position:absolute;background-position: -12px -443px; left: 8px;top: 10px;  cursor: pointer;}
+.l-down-r{ position:absolute; background-position: -65px -527px; left: 860px; top:7px;}
+.l-down li{float: left; margin-right: 9px; width: 74px; height: 70px; box-sizing:border-box;
+ -webkit-box-sizing:border-box;}
+.l-down li .small-pic{width: 68px; height: 54px; margin-top: 8px;}
+.small-list{left: 1px; position: absolute; top:11px; width: 2000px; }
+.small-out{width: 827px; height: 80px;overflow: hidden; position: absolute; left: 36px;}
+.center-r .close{position: absolute; top: -14px; right: -14px;}
+.people-ii{width: 55px; height: 55px; float: left;}
+.people-icon{margin-top: 20px;margin-left: 20px;}
+.people-info{float: left; margin-left: 10px;}
+.people-name{color: #e48a6f;margin:5px 0 2px; font-size: 14px;overflow: hidden; white-space: nowrap; text-overflow:ellipsis;}
+.heart{margin-top: 10px;margin-left: 20px;color:#dbcbae;}
+.heart .heart-up{text-decoration: none; background: url(images/ico.png) no-repeat;
+background-position: -284px 0px;padding: 0 0 0 25px; color:#dbcbae;}
+.heart .remark{background: url(images/ico.png) no-repeat; background-position: -186px -257px;
+color: #dbcbae; margin: 0 0 14px; padding: 8px 0 0 33px;
+}
+.input-remark{margin-top: 20px; margin-left: 20px;}
+.remark-test{vertical-align: middle;outline: 0; border:1px solid #f0e4ce;height: 44px; padding: 5px 10px; width: 155px;}
+.remark-btn{display: inline-block; background: #f38462; color: #fff; width: 48px; height: 55px; line-height: 50px;font-size: 14px; text-align: center;}
+.pic-dialog{display: none;}
+.hhhh{font-size: 100px; color: black;}
+</style>
+
+</head>
+<body>
+<a class="open-dialog hhhh" href="###">点击我</a>
+
+<div class="pic-dialog dialog">
+
+    <div class="flow-header">
+        
+    </div>
+
+    <div class="flow-container">
+        <div class="flow-center">
+
+            <div class="center-l">
+                <img class="big-pic" src="images/a.jpg">
+                <div class="l-down cf">
+                    <span class="l-down-l" href="###"></span>
+                    <span class="l-down-r" href="###"></span>
+                    <div class="small-out">
+                        <ul class="small-list cf">
+                            <li><img class="small-pic" src="images/a.jpg"></li>
+                            <li><img class="small-pic" src="images/f.jpg"></li>
+                            <li><img class="small-pic" src="images/c.jpg"></li>
+                            <li><img class="small-pic" src="images/d.jpg"></li>
+                            <li><img class="small-pic" src="images/f.jpg"></li>
+                            <li><img class="small-pic" src="images/e.jpg"></li>
+                            <li><img class="small-pic" src="images/g.jpg"></li>
+                            <li><img class="small-pic" src="images/h.jpg"></li>
+                            <li><img class="small-pic" src="images/a.jpg"></li>
+                            <li><img class="small-pic" src="images/d.jpg"></li>
+                            <li><img class="small-pic" src="images/d.jpg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-r"> 
+                
+                <div class="close"><img src="images/close.png"></div>
+                <div class="people-icon cf">
+                    <img class="people-ii" src="http://wx.qlogo.cn/mmopen/3cDXyM1b5Y9Apezb7nnicjUhkD4Q6pFc7ySU3ov5U9Oh71Qh2D4kYhO2iaTXPgjmCfeZpnrRtDEFYa82BEEEC2ywHOX0PZLnaV/0">
+                    <div class="people-info">
+                        <h5 class="people-name">馨仔</h5>
+                        <p class="people-info-date">上传于2015年12月29号</p>
+                    </div>
+                </div>
+                <div class="heart">
+                    <a href="javascript:void(0)" class="heart-up">赞(
+                        <label class="heart-num">1</label>)
+                    </a>
+                    <span class="remark">
+                        评论(
+                        <label class="remark-num">1</label>)
+                    </span>
+                </div>
+
+                <div class="input-remark">
+                    <div class="remark-in">
+                        <textarea class="remark-test" placeholder="请输入评论内容"></textarea>
+                        <span class="remark-btn">评论</span>
+                    </div>
+                    <!-- <ul class="remark-list"></ul> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="jquery-2.1.3.js"></script>
+<script type="text/javascript">
+    
+$(function(){
+
+    $(".close").on("click", function(){
+        $(".dialog").css("display", "none");
+    })
+
+    $(".open-dialog").on("click", function(){
+        console.log("dddd");
+        $(".dialog").css("display", "block");
+        $(".pic-dialog").addClass("dialog");
+    })
+    var pic_length = $(".small-list li").length;
+    var total = Math.floor(pic_length/10),
+        num = 0;
+
+    if(pic_length < 10){
+        $(".l-down-r").on("click", leftStart);
+        $(".l-down-l").on("click", leftStart);
+    }    
+    button(num);
+
+    $(".l-down-r").on("click", function(){
+        if(num == total){
+            $(".small-list").animate({left: -830*total+"px"}, 300);
+        }else{
+            num++;
+            button(num);
+        } 
+    })
+
+    $(".l-down-l").on("click", function(){
+        if(num == 0){
+            leftStart();
+        }else{
+            num--;
+            button(num);
+        }
+        
+    })
+
+    $(".small-list li").on( "click", function(){    
+        $(".small-list li").css("border","none"); //让所有的边框取消
+        $(this).css("border","3px solid red"); //特定的边框样式显示
+        var src = $(this).children()[0].src;  
+        $(".big-pic")[0].src = src ;
+        //点击左右按钮轮播    
+    })
+
+    function leftStart(){
+        $(".small-list").animate({left: "0px"}, 300);
+    }
+    function button(num){
+        $(".small-list").animate({left: -830*num+"px"}, 300);
+        if(num == 0){
+            $(".l-down-r").css("backgroundPosition", "-65px -519px");//右边红
+            $(".l-down-l").css("backgroundPosition", "-12px -443px");
+        }
+
+        if(num == total){
+            $(".l-down-l").css("backgroundPosition", "-12px -527px");//左边红
+            $(".l-down-r").css("backgroundPosition", "-65px -434px");
+        }
+
+        if( num>0 && num < total){
+            $(".l-down-r").css("backgroundPosition", "-63px -443px");
+            $(".l-down-l").css("backgroundPosition", "-12px -527px");
+        }
+    }
+
+
+})
+
+
+</script>
+</body>
+</html>
